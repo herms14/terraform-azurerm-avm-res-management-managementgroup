@@ -1,31 +1,18 @@
 <!-- BEGIN_TF_DOCS -->
-# Default example
+# terraform-azurerm-avm-template
 
 This deploys the module in its simplest form.
 
 ```hcl
-terraform {
-  required_version = ">= 1.5, < 2.0"
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.0"
-    }
-  }
-}
-
 provider "azurerm" {
   features {}
 }
 
-# This is the module call for the management group
 module "management_group" {
   source = "../../"
 
-  display_name = "Default Management Group Example"
-  name         = "default-mg-example"
-
-  enable_telemetry = var.enable_telemetry # see variables.tf
+  display_name = "Example Management Group"
+  name         = "example-mg"
 }
 ```
 
@@ -49,21 +36,23 @@ No required inputs.
 
 ## Optional Inputs
 
-The following input variables are optional (have default values):
-
-### <a name="input_enable_telemetry"></a> [enable\_telemetry](#input\_enable\_telemetry)
-
-Description: This variable controls whether or not telemetry is enabled for the module.  
-For more information see <https://aka.ms/avm/telemetryinfo>.  
-If it is set to false, then no telemetry will be collected.
-
-Type: `bool`
-
-Default: `true`
+No optional inputs.
 
 ## Outputs
 
-No outputs.
+The following outputs are exported:
+
+### <a name="output_management_group_display_name"></a> [management\_group\_display\_name](#output\_management\_group\_display\_name)
+
+Description: The display name of the created management group
+
+### <a name="output_management_group_id"></a> [management\_group\_id](#output\_management\_group\_id)
+
+Description: The ID of the created management group
+
+### <a name="output_management_group_name"></a> [management\_group\_name](#output\_management\_group\_name)
+
+Description: The name of the created management group
 
 ## Modules
 

@@ -27,3 +27,8 @@ output "resource" {
   description = "The full resource object of the management group."
   value       = azurerm_management_group.this
 }
+
+output "resource_id" {
+  description = "The ID of the management group"
+  value       = azurerm_management_group.this.id
+}
